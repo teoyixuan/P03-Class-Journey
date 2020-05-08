@@ -1,8 +1,8 @@
 package sg.edu.rp.c346.p03_class_journey;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.ActionBar;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -34,15 +34,19 @@ public class Info_for_C347 extends AppCompatActivity {
         btnSend = findViewById(R.id.buttonEmail);
         btnAdd = findViewById(R.id.buttonAdd);
 
+        ActionBar ab = getSupportActionBar();
+
         Intent i = getIntent();
         position = i.getIntExtra("position",0);
 
         array = new ArrayList<DailyCA>();
         if (position == 1){
+            ab.setTitle("Info For C302");
             array.add(new DailyCA("A", "C302", 1));
             array.add(new DailyCA("C", "C302", 2));
             array.add(new DailyCA("A", "C302", 3));
         } else if (position == 0){
+            ab.setTitle("Info For C347");
             array.add(new DailyCA("B", "C347", 1));
             array.add(new DailyCA("C", "C347", 2));
             array.add(new DailyCA("A", "C347", 3));
@@ -101,6 +105,7 @@ public class Info_for_C347 extends AppCompatActivity {
 
     }
 
+
     @Override
     protected void onActivityResult(int requestCode, int
             resultCode, Intent data) {
@@ -120,5 +125,5 @@ public class Info_for_C347 extends AppCompatActivity {
             }
         }
     }
-    
+
 }

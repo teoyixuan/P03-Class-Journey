@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 // String selectedHoliday = array.get(position);
                 Intent i = new Intent(MainActivity.this, Info_for_C347.class);
-                i.putExtra("number", position);
+                i.putExtra("position", position);
                 startActivity(i);
             }
         });
